@@ -19,5 +19,5 @@ total = sum(n//100 for n in nums)
 
 # ans=(target-total)*100
 # これだとマイナスになってしまうので、max関数を使用して既に目標を達成している場合は、0を表示すべき
-remain = max(0, target - total)
+remain = max(0, target - total)*100
 print(remain)
