@@ -26,16 +26,19 @@ def solution(time, deposits, withdraws, salaries):
     daly_amount_changes = [0]*time
 
     # 入金
+    # depositsから2つのパラメータを取り出して、時間と金額を取得し、金額だけ、配列にぶち込む
     for t,amount in deposits:
         if 0<= t < time:
             daly_amount_changes[t] += amount
 
     # 出金
+    # depositesと同じでマイナスバージョンにすればいい
     for t,amount in withdraws:
         if 0<= t < time:
             daly_amount_changes[t] -= amount
 
     # 給与
+    # 注意すべきなのは、開始と終了があるからその期間足すということを留意する
     for start, end, amount in salaries:
         for t in range(start,end):
             daly_amount_changes[t] += amount
